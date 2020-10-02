@@ -1,0 +1,52 @@
+/* ----------------------------------------------- */
+/* -------------- Project Colors ----------------- */
+/* ----------------------------------------------- */
+
+root {
+    --primary-color: rgba(0, 182, 180, 1);
+    --primary-color-dark: rgba(0, 148, 146, 1);
+    --primary-color-light: rgba(0, 182, 180, 0.4);
+    --font-color: #969696;
+    --font-color-light: #bbb;
+    --font-color-dark: #6a6a6a;
+    --slightly-white: #f8f8f8;
+}
+
+/* ----------------------------------------------- */
+/* ---------------- BASIC SETUP ------------------ */
+/* ----------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ----------------------------------------------- */
+/* ------------- REUSABLE COMPONENTS ------------- */
+/* ----------------------------------------------- */
+
+.row {
+    width: 90%;
+    margin: 0 5%;
+}
