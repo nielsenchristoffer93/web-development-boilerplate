@@ -3,13 +3,8 @@
 /* ----------------------------------------------- */
 
 root {
-    --primary-color: rgba(0, 182, 180, 1);
-    --primary-color-dark: rgba(0, 148, 146, 1);
-    --primary-color-light: rgba(0, 182, 180, 0.4);
-    --font-color: #969696;
-    --font-color-light: #bbb;
-    --font-color-dark: #6a6a6a;
-    --slightly-white: #f8f8f8;
+    --bg-navigation-primary: #222;
+    --bg-navigation-secondary: #090909;
 }
 
 /* ----------------------------------------------- */
@@ -30,23 +25,123 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-.clearfix {
-    zoom: 1;
+/* ------------ SCROLLBAR SETTINGS --------------- */
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-.clearfix:after {
-    content: '.';
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
 }
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
 
 /* ----------------------------------------------- */
 /* ------------- REUSABLE COMPONENTS ------------- */
 /* ----------------------------------------------- */
 
-.row {
-    width: 90%;
-    margin: 0 5%;
+main {
+  /* background-color: #555; */
+  color: white;
+  margin-left: 5rem;
+  padding:0 5%;
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  background-color: #23232e;
+  transition: width .6s ease;
+  overflow: hidden;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: #23232e;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all .6s;
+}
+
+.nav-item-brand i,
+.nav-link i {
+  text-align: center;
+  color: #3742fa;
+  font-size: 2rem;
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background-color: #090909;
+  color: #ececec;
+}
+
+.nav-link:hover .nav-link-text {
+  color: white;
+}
+
+.nav-link i {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.nav-link-text {
+  display: none;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  transition: color .6s ease;
+}
+
+.nav-item-brand {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #090909;
+  font-size: 1.5rem;
+  letter-spacing: .3ch;
+  width: 100%;
+}
+
+.nav-item-brand i {
+  transform: rotate(0deg);
+  transition: all .6s ease;
+}
+
+.navbar:hover .nav-item-brand i {
+  transform: rotate(-180deg);
+}
+
+.brand-text {
+  display: inline;
+  position: absolute;
+  left: -200px;
+  transition: .6s;
+}
+
+.navbar:hover .brand-text {
+  left: 8px;
 }
